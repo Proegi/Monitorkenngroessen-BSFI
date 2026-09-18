@@ -112,6 +112,8 @@ details .inner{padding:14px 16px;font-family:var(--mono);font-size:14px}
 .mc .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 18px}
 .mc .opts label{display:flex;gap:8px;align-items:flex-start;font-size:14px}
 .mc .opts input{margin-top:4px}
+.mc .opts label.ok{color:var(--ok);font-weight:600}
+.mc .opts label.bad{color:var(--bad);font-weight:600}
 
 .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--pink)}
 .links a:hover{color:var(--pink)}
@@ -150,6 +152,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
   summary{color:#000}
   textarea{background:repeating-linear-gradient(#fff,#fff 25px,#ccc 25px,#ccc 26px);border:1px solid #999;color:#000}
   input.ok,input.bad,select.ok,select.bad{border:1px solid #999;box-shadow:none}
+  .mc .opts label.ok,.mc .opts label.bad{color:#000;font-weight:400}
   input[type=text],select{border:1px solid #999;background:#fff}
   figure{break-inside:avoid}
   .scroll{overflow:visible}
@@ -505,7 +508,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
   <div class="mc"><div class="q">1. Welche Angabe beschreibt das Bildseitenverhältnis?</div>
     <div class="opts">
       <label><input type="radio" name="q1"> 3440 x 1440</label>
-      <label><input type="radio" name="q1"> 21:9</label>
+      <label><input type="radio" name="q1" data-correct> 21:9</label>
       <label><input type="radio" name="q1"> 34 Zoll</label>
       <label><input type="radio" name="q1"> 3000:1</label>
     </div></div>
@@ -514,14 +517,14 @@ button.print:hover{background:var(--ink);color:var(--card)}
     <div class="opts">
       <label><input type="radio" name="q2"> IPS</label>
       <label><input type="radio" name="q2"> VA</label>
-      <label><input type="radio" name="q2"> TN</label>
+      <label><input type="radio" name="q2" data-correct> TN</label>
       <label><input type="radio" name="q2"> MVA</label>
     </div></div>
 
   <div class="mc"><div class="q">3. Die Einheit cd/m² beschreibt ...</div>
     <div class="opts">
       <label><input type="radio" name="q3"> das Kontrastverhältnis</label>
-      <label><input type="radio" name="q3"> die Bildhelligkeit</label>
+      <label><input type="radio" name="q3" data-correct> die Bildhelligkeit</label>
       <label><input type="radio" name="q3"> die Pixeldichte</label>
       <label><input type="radio" name="q3"> die Reaktionszeit</label>
     </div></div>
@@ -530,7 +533,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
     <div class="opts">
       <label><input type="radio" name="q4"> Neigen nach oben und unten</label>
       <label><input type="radio" name="q4"> Verstellen in der Höhe</label>
-      <label><input type="radio" name="q4"> Drehen ins Hochformat</label>
+      <label><input type="radio" name="q4" data-correct> Drehen ins Hochformat</label>
       <label><input type="radio" name="q4"> Seitliches Schwenken</label>
     </div></div>
 
@@ -538,7 +541,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
     <div class="opts">
       <label><input type="radio" name="q5"> HDMI</label>
       <label><input type="radio" name="q5"> DisplayPort</label>
-      <label><input type="radio" name="q5"> VGA</label>
+      <label><input type="radio" name="q5" data-correct> VGA</label>
       <label><input type="radio" name="q5"> USB-C</label>
     </div></div>
 
@@ -547,20 +550,20 @@ button.print:hover{background:var(--ink);color:var(--card)}
       <label><input type="radio" name="q6"> 1920 x 1080</label>
       <label><input type="radio" name="q6"> 2560 x 1440</label>
       <label><input type="radio" name="q6"> 3440 x 1440</label>
-      <label><input type="radio" name="q6"> 3840 x 2160</label>
+      <label><input type="radio" name="q6" data-correct> 3840 x 2160</label>
     </div></div>
 
   <div class="mc"><div class="q">7. Welche Norm regelt die Lochabstände für Wand- und Armhalterungen?</div>
     <div class="opts">
       <label><input type="radio" name="q7"> MHL</label>
       <label><input type="radio" name="q7"> HDCP</label>
-      <label><input type="radio" name="q7"> VESA</label>
+      <label><input type="radio" name="q7" data-correct> VESA</label>
       <label><input type="radio" name="q7"> TCO</label>
     </div></div>
 
   <div class="mc"><div class="q">8. Ein statisches Kontrastverhältnis von 3000:1 bedeutet ...</div>
     <div class="opts">
-      <label><input type="radio" name="q8"> Weiß ist 3000-mal heller als Schwarz</label>
+      <label><input type="radio" name="q8" data-correct> Weiß ist 3000-mal heller als Schwarz</label>
       <label><input type="radio" name="q8"> der Monitor zeigt 3000 Farben</label>
       <label><input type="radio" name="q8"> die Helligkeit schwankt um 3000 cd/m²</label>
       <label><input type="radio" name="q8"> das Bild wird 3000-mal je Sekunde aufgebaut</label>
@@ -568,7 +571,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
 
   <div class="mc"><div class="q">9. Welche Aussage zur Hintergrundbeleuchtung stimmt?</div>
     <div class="opts">
-      <label><input type="radio" name="q9"> OLED benötigt keine Hintergrundbeleuchtung</label>
+      <label><input type="radio" name="q9" data-correct> OLED benötigt keine Hintergrundbeleuchtung</label>
       <label><input type="radio" name="q9"> LCD erzeugt Licht im Flüssigkristall selbst</label>
       <label><input type="radio" name="q9"> Direct-LED sitzt im Rahmen des Monitors</label>
       <label><input type="radio" name="q9"> TN-Panels leuchten ohne Beleuchtung</label>
@@ -576,7 +579,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
 
   <div class="mc"><div class="q">10. Ein typischer Nachteil von Edge-LED ist ...</div>
     <div class="opts">
-      <label><input type="radio" name="q10"> eine ungleichmäßige Ausleuchtung</label>
+      <label><input type="radio" name="q10" data-correct> eine ungleichmäßige Ausleuchtung</label>
       <label><input type="radio" name="q10"> eine fehlende 4K-Fähigkeit</label>
       <label><input type="radio" name="q10"> ein sehr hoher Stromverbrauch</label>
       <label><input type="radio" name="q10"> eine dickere Bauform als Direct-LED</label>
@@ -585,7 +588,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
   <div class="mc"><div class="q">11. Welches ist ein staatliches deutsches Umweltzeichen?</div>
     <div class="opts">
       <label><input type="radio" name="q11"> Energy Star</label>
-      <label><input type="radio" name="q11"> Blauer Engel</label>
+      <label><input type="radio" name="q11" data-correct> Blauer Engel</label>
       <label><input type="radio" name="q11"> TCO Certified</label>
       <label><input type="radio" name="q11"> CE</label>
     </div></div>
@@ -594,14 +597,14 @@ button.print:hover{background:var(--ink);color:var(--card)}
     <div class="opts">
       <label><input type="radio" name="q12"> 0,6 ms</label>
       <label><input type="radio" name="q12"> 6,9 ms</label>
-      <label><input type="radio" name="q12"> 16,7 ms</label>
+      <label><input type="radio" name="q12" data-correct> 16,7 ms</label>
       <label><input type="radio" name="q12"> 60 ms</label>
     </div></div>
 
   <div class="mc"><div class="q">13. Die Bildschirmdiagonale wird gemessen ...</div>
     <div class="opts">
       <label><input type="radio" name="q13"> von Gehäuseecke zu Gehäuseecke</label>
-      <label><input type="radio" name="q13"> über die sichtbare Bildfläche, diagonal</label>
+      <label><input type="radio" name="q13" data-correct> über die sichtbare Bildfläche, diagonal</label>
       <label><input type="radio" name="q13"> waagerecht über die Bildbreite</label>
       <label><input type="radio" name="q13"> inklusive Standfuß</label>
     </div></div>
@@ -609,7 +612,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
   <div class="mc"><div class="q">14. Die Abkürzung GtG bei der Reaktionszeit steht für ...</div>
     <div class="opts">
       <label><input type="radio" name="q14"> Gaming to Graphics</label>
-      <label><input type="radio" name="q14"> Grau zu Grau</label>
+      <label><input type="radio" name="q14" data-correct> Grau zu Grau</label>
       <label><input type="radio" name="q14"> Gamma to Gamut</label>
       <label><input type="radio" name="q14"> Grün zu Gelb</label>
     </div></div>
@@ -617,7 +620,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
   <div class="mc"><div class="q">15. Welche Aussage über die Pixeldichte in ppi trifft zu?</div>
     <div class="opts">
       <label><input type="radio" name="q15"> Sie steigt, wenn bei gleicher Auflösung die Diagonale wächst</label>
-      <label><input type="radio" name="q15"> Sie steigt, wenn bei gleicher Diagonale die Auflösung wächst</label>
+      <label><input type="radio" name="q15" data-correct> Sie steigt, wenn bei gleicher Diagonale die Auflösung wächst</label>
       <label><input type="radio" name="q15"> Sie ist bei allen 27-Zoll-Monitoren gleich</label>
       <label><input type="radio" name="q15"> Sie beschreibt die Anzahl der Farben je Pixel</label>
     </div></div>
@@ -625,10 +628,12 @@ button.print:hover{background:var(--ink);color:var(--card)}
   <div class="mc"><div class="q">16. Wofür ist ein Curved-Monitor vor allem gedacht?</div>
     <div class="opts">
       <label><input type="radio" name="q16"> für mehrere Betrachter nebeneinander</label>
-      <label><input type="radio" name="q16"> für eine einzelne Person mittig davor</label>
+      <label><input type="radio" name="q16" data-correct> für eine einzelne Person mittig davor</label>
       <label><input type="radio" name="q16"> für die Wandmontage im Empfang</label>
       <label><input type="radio" name="q16"> für den Betrieb im Hochformat</label>
     </div></div>
+
+  <div class="checkrow"><button class="check">Prüfen</button><span class="result"></span></div>
 </section>
 
 <section class="card">
@@ -749,9 +754,26 @@ button.print:hover{background:var(--ink);color:var(--card)}
         if(good) ok++;
       });
 
+      // Multiple-Choice-Gruppen
+      var radios = Array.prototype.slice.call(sec.querySelectorAll('input[type=radio][data-correct]'));
+      radios = radios.filter(function(r){
+        var afterPrev = !prevBtn || (prevBtn.compareDocumentPosition(r) & Node.DOCUMENT_POSITION_FOLLOWING);
+        var beforeThis = (btn.compareDocumentPosition(r) & Node.DOCUMENT_POSITION_PRECEDING);
+        return afterPrev && beforeThis;
+      });
+      var total = fields.length + radios.length;
+      radios.forEach(function(r){
+        var chosen = sec.querySelector('input[name="' + r.name + '"]:checked');
+        sec.querySelectorAll('input[name="' + r.name + '"]').forEach(function(o){
+          o.parentElement.classList.remove('ok','bad');
+        });
+        if(chosen === r){ r.parentElement.classList.add('ok'); ok++; }
+        else if(chosen){ chosen.parentElement.classList.add('bad'); }
+      });
+
       var out = btn.parentElement.querySelector('.result');
-      out.textContent = ok + ' von ' + fields.length + ' richtig';
-      out.className = 'result' + (ok === fields.length ? ' all-ok' : '');
+      out.textContent = ok + ' von ' + total + ' richtig';
+      out.className = 'result' + (ok === total ? ' all-ok' : '');
 
       // Hinweis nur zeigen, wenn nicht alles stimmt
       var hint = btn.closest('.checkrow').previousElementSibling;
@@ -759,7 +781,7 @@ button.print:hover{background:var(--ink);color:var(--card)}
         hint = hint.previousElementSibling;
       }
       if(hint && hint.classList && hint.classList.contains('hint')){
-        hint.hidden = (ok === fields.length);
+        hint.hidden = (ok === total);
       }
 
       // Aufklapptexte freischalten
